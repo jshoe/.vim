@@ -16,3 +16,6 @@
 [submodule "bundle/tagbar"]
 	path = bundle/tagbar
 	url = https://github.com/majutsushi/tagbar
+[submodule "bundle/vim-niji"]
+	path = bundle/vim-niji
+	url = https://github.com/amdt/vim-niji
