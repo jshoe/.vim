@@ -81,3 +81,21 @@ nmap <S-R> :set invrnu<CR>
 
 " <CTRL-H> deletes previous words in insert mode
 imap <C-H> <C-[>diwi
+
+" Don't autosave and autoload sessions through vim-sessions
+let g:session_autosave = 'yes'
+let g:session_autoload = 'yes
+
+" Save session and save and close all files with \q
+nnoremap <leader>q :mksession! ~/.vim/Session.vim<CR>:wqa<CR>
+
+" Save session and close all files without saving with \www
+nnoremap <leader>www :mksession! ~/.vim/Session.vim<CR>:qa!<CR>
+
+" Auto-restore all sessions from Session.vim if vim called without arguments
+function! RestoreSession()
+  if argc() == 0 "vim called without arguments
+    execute 'source ~/.vim/Session.vim'
+  end
+endfunction
+autocmd VimEnter * call RestoreSession()
