@@ -28,3 +28,6 @@
 [submodule "bundle/YouCompleteMe"]
 	path = bundle/YouCompleteMe
 	url = https://github.com/Valloric/YouCompleteMe
+[submodule "bundle/bundle/nerdtree"]
+	path = bundle/bundle/nerdtree
+	url = https://github.com/scrooloose/nerdtree
