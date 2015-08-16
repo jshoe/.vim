@@ -17,7 +17,7 @@ set confirm " raise unsaved changes confirmation
 set visualbell " use visual bell instead of beeping
 set t_vb= " reset terminal code for visual bell; disables if visualbell is set
 set mouse=a " enable mouse in all modes
-set cmdheight=2 " set command window height to 2 lines
+set cmdheight=1 " set command window height to 1 line
 set number " display line numbers on the left
 set notimeout ttimeout ttimeoutlen=200 " time out keycodes but not mappings
 set pastetoggle=<F11> " use F11 to toggle paste and nopaste
@@ -49,7 +49,7 @@ let g:syntastic_check_on_wq = 0 " don't check syntax on wq
 let g:Powerline_symbols = 'fancy' " fancy powerline symbols
 
 :set colorcolumn=80 " set columnbar at 80
-set relativenumber " show relative line numbers
+" set relativenumber " show relative line numbers
 set number " show line numbers
 set wrap " wrap window lines
 let g:syntastic_python_python_exec = '/usr/local/Cellar/python3/3.4.1/bin'
@@ -99,3 +99,13 @@ let g:session_autoload = 'no'
 "  end
 " endfunction
 " autocmd VimEnter * call RestoreSession()
+"
+map <silent> <Up> gk
+imap <silent> <Up> <C-o>gk
+map <silent> <Down> gj
+imap <silent> <Down> <C-o>gj
+
+filetype plugin on
+set omnifunc=syntaxcomplete#Complete
+
+set clipboard=unnamed
